@@ -1,85 +1,202 @@
+/* General Body Styles */
+/* General Body Styles */
 body {
-    height: 100%;
     margin: 0;
-    font: 14px sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    height: 100vh; /* Ensure the body takes full height */
+    display: flex;
+    flex-direction: column;
 }
 
+
+
+
+/* Header Styles */
+header {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Credits Section */
 #credits {
-    font: 12px sans-serif;
-    padding-bottom: 1%;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
 }
 
+/* Instructions Styles */
 .instructions {
-    color: red;
+    color: #c5cae9;
 }
 
-.optional {
-    color: darkgreen;
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #3f51b5;
+    width: 100%;
+    padding: 0.5rem 0;
 }
 
-/* Style tab links */
-.tablink {
-    background-color: #555;
-    color: white;
-    float: left;
-    margin: 0.5px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    font-size: 17px;
-    width: 33%;
+/* Main Content Area */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 100%;
+    overflow: auto; /* Allow scrolling if content overflows */
 }
 
-.tablink:hover {
-    background-color: #777;
-}
 
-/* Style the tab content (and add height:100% for full page content) */
+
+/* Tab Content Styles */
 .tabcontent {
-    color: black;
+    flex: 1;
     display: none;
-    padding: 100px 20px;
-    height: 100%;
+    padding: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 1rem 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
-.dataTableClass {
-    width: 80%;
-    border-collapse: collapse;
-    border: 2px black solid;
+.tabcontent.active {
+    display: flex;
 }
 
-.tableHeaderClass {
-    border: 2px solid black;
-    padding: 5px;
-    background-color: lightgray;
+/* File Upload Styles */
+.file-upload {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem; /* Added gap for better spacing */
+}
+
+/* File Label Styles */
+.file-label {
     font-weight: bold;
-    text-transform: uppercase;
+    color: #3f51b5;
 }
 
-.tableBodyClass {
-    border: 1px solid black;
-    padding: 5px;
+/* File Input Styles */
+.file-input {
+    padding: 0.5rem;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    max-width: 100%;
 }
 
-svg {
-    font: 10px sans-serif;
+/* Table Container Styles */
+.table-container {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    overflow-x: auto;
 }
 
-.container {
-    display: table-cell;
-    vertical-align: top;
-    height: 100%;
+/* Table Wrapper Styles */
+.table-wrapper {
+    min-width: 0;
+    flex: 1;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+    background-color: #ffffff;
     padding: 10px;
-    border: 0px solid black;
 }
 
-.dashboardGrid {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
+/* Table Info Styles */
+.table-info {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
+/* Data Table Styles */
+.data-table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* Table Header Styles */
+.data-table th, .data-table td {
+    border: 1px solid #b0bec5;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Header Cell Styles */
+.data-table th {
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+/* Table Cell Styles */
+.data-table td {
+    background-color: #ffffff;
+}
+
+/* Hover Effect for Single Table Cell */
+.data-table td:hover {
+    background-color: #e0e8f9;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* Pagination Button Styles */
+.pageButtonClass, .pageButtonClass:disabled {
+    border: 1px solid #b0bec5;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+/* Hover Effect for Pagination Buttons */
+.pageButtonClass:hover:not(.active) {
+    background-color: #e0e8f9;
+}
+
+/* Active Pagination Button Styles */
+.pageButtonClass.active {
+    background-color: #3f51b5;
+    color: #fff;
+}
+
+/* Disabled Pagination Button Styles */
+.pageButtonClass.disabled {
+    cursor: not-allowed;
+    color: #aaa;
+}
+
+/* Wrapper Styles */
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+
+/* Axis Styles */
 .axis line,
 .axis path {
     fill: none;
@@ -87,60 +204,386 @@ svg {
     shape-rendering: crispEdges;
 }
 
-.axis text {
-    fill: black;
+/* Legend Styles */
+.legend {
+    font-size: 1rem;
+    color: #333;
 }
 
-fieldset {
-    border-width: 0;
+/* Button, Input, Select, Textarea Styles */
+button, input, select, textarea {
+    font-size: 1rem;
 }
 
-#legend {
-    border: 1px solid black;
-    padding: 10px;
-}
-
-/* the style for the close-button in the legend */
-.close {
-    display: inline-block;
-    padding: 1px 5px;
-    margin: 4px;
-    border: 1px solid black;
-    color: #000;
-    background: #fff;
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-}
-
-.close:hover {
-    background: #ddd;
-    cursor: pointer;
-}
-
-/* the style for the circle in the legend */
-.color-circle {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-/* the style for dots in the scatterplot */
-.dot {
-    cursor: pointer;
-}
-
-/* tooltip for the scatterplot */
-div.tooltip {
-    position: absolute;
-    text-align: left;
-    padding: .2rem;
-    margin: 1rem;
-    background: #313639;
-    color: #f9f9f9;
-    border: 0px;
+/* Menu Styles */
+#menu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3f51b5;
+    color: #333;
     border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+/* Row Count Display Styles */
+.row-count {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+/* Scatterplot Styles */
+#scatterplot-container {
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.axis-label {
+    font-size: 14px;
+    fill: #333;
+}
+
+.dot:hover {
+    stroke: #000;
+    stroke-width: 1.5px;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
     pointer-events: none;
-    font-size: .7rem;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.radar-grid {
+    stroke: lightgray;
+    stroke-width: 0.5px;
+    fill: none;
+}
+
+.radar-axis {
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.legend {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* Updated scatterplot styles */
+#sp {
+    width: 100%;
+    height: 600px;
+}
+
+/* Updated control panel styles */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.controls label {
+    font-weight: bold;
+    color: #333;
+}
+
+.controls select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Updated button styles */
+button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #3f51b5;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #303f9f;
+}
+
+/* General improvement for tab navigation */
+.tablink {
+    background-color: #3f51b5;
+    color: #fff;
+    border: 1px solid #3f51b5;
+    outline: none;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1rem;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 4px;
+    margin: 0 5px;
+}
+
+.tablink:hover {
+    background-color: #303f9f;
+    border-color: #3f51b5;
+}
+
+/* Radar Chart Styles */
+#radar-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: visible;
+}
+
+.radar-label {
+    font-size: 10px;
+    fill: #333;
+    text-anchor: middle;
+    transform: translateY(-10px);
+}
+
+/* Legend Item Styles */
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.color-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.close-button {
+    cursor: pointer;
+    margin-left: 10px;
+    color: red;
+    font-weight: bold;
+}
+
+.info-block {
+    padding: 0.5rem;
+    border: 1px solid #b0bec5;
+    border-radius: 8px;
+    background-color: #f0f4f8;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/* Chart Header */
+.chart-header {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Chart Description */
+.chart-description {
+    color: #3f51b5;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Filter Dropdown Styles */
+.styled-select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #3f51b5;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 1rem;
+    color: #3f51b5;
+    width: 150px;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjY2NjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgMTAgNiI+PHBhdGggZD0iTTAgMGw1IDUgNSA1eiIvPjwvc3ZnPg==');
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.styled-select:focus {
+    border-color: #303f9f;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+    outline: none;
+}
+
+.styled-select:hover {
+    border-color: #303f9f;
+}
+/* Adjust the dashboard grid to have specific columns and rows */
+.dashboardGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto; /* Two rows */
+    gap: 2rem; /* Space between the grid items both horizontally and vertically */
+}
+
+.small-container {
+    width: 20%;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.container {
+    flex: 1;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+
+
+.filter {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s ease-in-out;
+    min-height: 100px;
+    gap: 2rem
+}
+
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.chart-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding:0;
+    overflow: visible;
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+}
+
+.chart-container svg {
+    width: 100%;
+    height: 100%;
+    display: block; /* Ensuring block display */
+}
+
+
+/* Style for the table */
+#stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#stats-table th, #stats-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#stats-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+    font-weight: bold;
+}
+
+#stats-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#stats-table tr:hover {
+    background-color: #ddd;
+}
+
+#stats-table th, #stats-table td {
+    text-align: center;
+}
+.counter-labels-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.counter {
+    flex: 1;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.stats-container {
+    display: flex;
+    flex: 4;
+    gap: 20px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    min-height: 600px; /* Ensure enough height */
+    min-width: 300px; /* Ensure minimum width */
+    
 }
